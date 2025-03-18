@@ -2,7 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRoutes from './routes/userRoutes.js';
-import thoughtRoutes from './routes/thoughtRoutes.js';  // ✅ Import the thought routes
+import thoughtRoutes from './routes/thoughtRoutes.js';
 
 // Load env vars
 dotenv.config();
@@ -26,10 +26,10 @@ mongoose.connection.on('error', (err) => {
   console.error('❌ MongoDB connection error:', err);
 });
 
-// ✅ Mount the user routes BEFORE the test route
+// Mount the user routes BEFORE the test route
 app.use('/api/users', userRoutes);
 
-// ✅ Mount the thought routes
+// Mount the thought routes
 app.use('/api/thoughts', thoughtRoutes);
 
 // Test route

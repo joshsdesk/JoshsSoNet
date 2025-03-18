@@ -1,5 +1,5 @@
 {
-  "name": "JoshsSoNet",
+  "name": "joshssonet",
   "version": "1.0.0",
   "description": "A Social Network API using Express, MongoDB, and Mongoose.",
   "type": "module",
