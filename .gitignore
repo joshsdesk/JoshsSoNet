@@ -1,0 +1,12 @@
+# Node modules - never push this
+node_modules/
+
+# Environment variables - sensitive info
+.env
+
+# TypeScript build output - auto generated
+dist/
+
+# Optional: OS/system files
+.DS_Store
+Thumbs.db
