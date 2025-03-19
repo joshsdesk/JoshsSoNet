@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 
 const router = Router();
 
-// ✅ ADD a reaction to a thought
+// ADD a reaction to a thought
 router.post('/:thoughtId/reactions', async (req, res) => {
   if (!mongoose.Types.ObjectId.isValid(req.params.thoughtId)) {
     return res.status(400).json({ message: 'Invalid Thought ID format' });
@@ -24,7 +24,7 @@ router.post('/:thoughtId/reactions', async (req, res) => {
   }
 });
 
-// ✅ REMOVE a reaction from a thought
+// REMOVE a reaction from a thought
 router.delete('/:thoughtId/reactions/:reactionId', async (req, res) => {
   if (!mongoose.Types.ObjectId.isValid(req.params.thoughtId)) {
     return res.status(400).json({ message: 'Invalid Thought ID format' });
@@ -44,7 +44,7 @@ router.delete('/:thoughtId/reactions/:reactionId', async (req, res) => {
   }
 });
 
-// ✅ GET all thoughts
+// GET all thoughts
 router.get('/', async (_req, res) => {
   try {
     const thoughts = await Thought.find();
@@ -54,7 +54,7 @@ router.get('/', async (_req, res) => {
   }
 });
 
-// ✅ POST create a thought
+// POST create a thought
 router.post('/', async (req, res) => {
   try {
     const newThought = await Thought.create(req.body);
@@ -64,7 +64,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// ✅ GET single thought by ID
+// GET single thought by ID
 router.get('/:id', async (req, res) => {
   if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
     return res.status(400).json({ message: 'Invalid Thought ID format' });
@@ -80,7 +80,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// ✅ UPDATE a thought by ID
+// UPDATE a thought by ID
 router.put('/:id', async (req, res) => {
   if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
     return res.status(400).json({ message: 'Invalid Thought ID format' });
@@ -100,7 +100,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// ✅ DELETE a thought by ID
+// DELETE a thought by ID
 router.delete('/:id', async (req, res) => {
   if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
     return res.status(400).json({ message: 'Invalid Thought ID format' });
